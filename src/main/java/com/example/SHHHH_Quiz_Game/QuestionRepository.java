@@ -8,7 +8,7 @@ public class QuestionRepository {
 
         questions.add(new Question("Which of these classes are the direct subclasses of the Throwable class?","RuntimeException and Error class","Exception and VirtualMachineError class","IOException and VirtualMachineError class","Error and Exception clas"));
         questions.add(new Question("Which of the following interface is used to declare core methods in Java?","Set","EventListner","Comparison","Collection"));
-        questions.add(new  Question("Which of these interface handle sequences?","Set","Comparator","Collector","List"));
+        questions.add(new Question("Which of these interface handle sequences?","Set","Comparator","Collector","List"));
         questions.add(new Question("Which of this interface must contain a unique element?","Collection","List","Array","Set"));
         questions.add(new Question("When is the object created with new keyword?","When creating class","At compile time","When writing code","At run time"));
         questions.add(new Question("Automatic type conversion is possible in which of the possible cases?","Byte to int","Short to int","Long to int","Int to long"));
