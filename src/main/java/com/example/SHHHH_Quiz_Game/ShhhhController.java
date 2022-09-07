@@ -15,4 +15,7 @@ public class ShhhhController {
     public String signup () {
         return "create";
     }
+
+    @GetMapping("/userpage")
+    public String userpage() { return "userpage"; }
 }
