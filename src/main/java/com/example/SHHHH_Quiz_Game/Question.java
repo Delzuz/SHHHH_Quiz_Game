@@ -1,13 +1,16 @@
 package com.example.SHHHH_Quiz_Game;
 
 public class Question {
-    public Question(String question, String answerW1, String answerW2, String answerW3, String answerC) {
+    public Question(int id, String question, String answerW1, String answerW2, String answerW3, String answerC) {
         this.question = question;
         this.answerW1 = answerW1;
         this.answerW2 = answerW2;
         this.answerW3 = answerW3;
         this.answerC = answerC;
+        this.id = id;
     }
+
+    private int id;
     private String question;
     private String answerW1;
     private String answerW2;
