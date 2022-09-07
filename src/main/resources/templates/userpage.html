@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User page</title>
 </head>
 <body>
+<h1>Java Quiz Game</h1>
+<div>
+    <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+    <form th:action="@{/logout}" method="post">
+        <input type="button" onclick="/game" value="Play game"/>
+        <input type="submit" value="Logout"/>
+    </form>
+
+</div>
 
 </body>
 </html>
