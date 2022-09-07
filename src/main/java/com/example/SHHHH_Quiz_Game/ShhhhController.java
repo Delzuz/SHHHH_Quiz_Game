@@ -18,4 +18,14 @@ public class ShhhhController {
 
     @GetMapping("/userpage")
     public String userpage() { return "userpage"; }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "login";
+    }
 }

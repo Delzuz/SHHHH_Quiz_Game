@@ -1,20 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en"/>
 <head>
     <title>Java Quiz Game</title>
 </head>
 <body>
 <h1>Java Quiz Game</h1>
-<div th:if="${param.error}">
-    Invalid username or password.
-</div>
 
-<form th:action="@{/login}" method="POST">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-    <div><a href="/signup">Sign up</a></div>
-</form>
 </body>
 </html>
