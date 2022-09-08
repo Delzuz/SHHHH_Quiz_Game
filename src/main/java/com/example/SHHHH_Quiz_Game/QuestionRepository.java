@@ -50,4 +50,21 @@ public class QuestionRepository {
         }
         return null;
     }
+
+    ArrayList<Integer> usedNums = new ArrayList<>();
+    public Question getRandomQuestion() {
+        int max = 30;
+        int min = 0;
+        while (true) {
+            int randomNum = (int) (Math.random() * (max - min + 1) + min);
+            if (usedNums.isEmpty() || !usedNums.contains(randomNum)) {
+                for (Question question : questions) {
+                    if (question.getId() == randomNum) {
+                        usedNums.add(randomNum);
+                        return question;
+                    }
+                }
+            }
+        }
+    }
 }
