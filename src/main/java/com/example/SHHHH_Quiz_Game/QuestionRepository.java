@@ -61,6 +61,9 @@ public class QuestionRepository {
                 for (Question question : questions) {
                     if (question.getId() == randomNum) {
                         usedNums.add(randomNum);
+                        if (usedNums.size() == 30) {
+                            usedNums.clear();
+                        }
                         return question;
                     }
                 }
