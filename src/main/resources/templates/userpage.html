@@ -9,7 +9,8 @@
 <div>
     <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
 
-    <input type="button" onclick="/game" value="Play game"/>
+
+    <a href="/game/1"><input type="button"  value="Play game"/></a>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
     </form>
