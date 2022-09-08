@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Quiz</title>
 </head>
 <body>
+
+<h1>Java Quiz</h1>
+<p>Each question has 4 options.</p>
+
+<table>
+<tr th:text="'Question ' + ${question.quiz}">
+   QUESTION
+</tr>
+    <tr>
+        <td>
+        <label th:text="question.answerW1">Test</label> <input type="radio" name="action" th:value="question.answerW1"/>
+        <label th:text="question.answerW1">Test1</label> <input type="radio" name="action" th:value="question.answerW2"/>
+        <label th:text="question.answerW1">Test2</label> <input type="radio" name="action" th:value="question.answerW3"/>
+        <label th:text="question.answerW1">Test3</label> <input type="radio" name="action" th:value="question.answerC"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Next"/>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
