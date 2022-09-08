@@ -10,7 +10,7 @@
     <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
 
 
-    <a href="/game/1"><input type="button"  value="Play game"/></a>
+    <a href="/game"><input type="button"  value="Play game"/></a>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
     </form>
