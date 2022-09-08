@@ -3,8 +3,11 @@ package com.example.SHHHH_Quiz_Game;
 import java.util.ArrayList;
 
 public class QuestionRepository {
+    private ArrayList<Question> questions;
 
-    private ArrayList<Question> questions = new ArrayList<>(); {
+
+    public QuestionRepository() {
+        questions = new ArrayList<>();
 
         questions.add(new Question(1,"Which of these classes are the direct subclasses of the Throwable class?","RuntimeException and Error class","Exception and VirtualMachineError class","IOException and VirtualMachineError class","Error and Exception clas"));
         questions.add(new Question(2, "Which of the following interface is used to declare core methods in Java?","Set","EventListner","Comparison","Collection"));
@@ -39,4 +42,12 @@ public class QuestionRepository {
 
     }
 
+    public Question getQuestion(int id) {
+        for (Question question : questions) {
+            if (question.getId() == id) {
+                return question;
+            }
+        }
+        return null;
+    }
 }

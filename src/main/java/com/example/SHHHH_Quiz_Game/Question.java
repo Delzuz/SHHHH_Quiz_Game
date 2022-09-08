@@ -1,8 +1,14 @@
 package com.example.SHHHH_Quiz_Game;
 
 public class Question {
-    public Question(int id, String question, String answerW1, String answerW2, String answerW3, String answerC) {
-        this.question = question;
+    private int id;
+    private String quiz;
+    private String answerW1;
+    private String answerW2;
+    private String answerW3;
+    private String answerC;
+    public Question(int id, String quiz, String answerW1, String answerW2, String answerW3, String answerC) {
+        this.quiz = quiz;
         this.answerW1 = answerW1;
         this.answerW2 = answerW2;
         this.answerW3 = answerW3;
@@ -10,15 +16,9 @@ public class Question {
         this.id = id;
     }
 
-    private int id;
-    private String question;
-    private String answerW1;
-    private String answerW2;
-    private String answerW3;
-    private String answerC;
-
-    public String getQuestion() {
-        return question;
+    public int getId() { return id; }
+    public String getQuiz() {
+        return quiz;
     }
 
     public String getAnswerW1() {
