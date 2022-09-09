@@ -3,11 +3,10 @@ package com.example.SHHHH_Quiz_Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 import java.util.Random;
 
 @Controller
@@ -52,19 +51,45 @@ public class ShhhhController {
         return "login";
     }
 
+    Random random = new Random();
+    int ranInt = random.nextInt(1,4);
     @GetMapping("/game")
-    public String startGame (Model model) {
+    public String startGame (Model model, HttpSession session) {
         QuestionRepository queRepository = new QuestionRepository();
         Question question = queRepository.getRandomQuestion();
-        model.addAttribute("question", question);
-        Random random = new Random();
-        return switch (random.nextInt(1, 4)) {
+        session.setAttribute("question", question);
+        ranInt = random.nextInt(0,5);
+        //model.addAttribute("randomInt",ranInt);
+        return switch (ranInt) {
             case 1 -> "game1";
             case 2 -> "game2";
             case 3 -> "game3";
             default -> "game";
         };
 
+
+
+    }
+
+    @PostMapping("/game")
+    public String startGamePost (Model model, @RequestParam String action, HttpSession session) {
+        session.getAttribute("question");
+        System.out.println(action);
+        if (action.equals("session.question.answerW1") || action.equals("session.question.answerW2") || action.equals("session.question.answerW3")) {
+            model.addAttribute("incorrectAnswer", true);
+        }
+
+
+        if (action.equals("session.question.answerC")){
+            model.addAttribute("correctAnswer", true);
+        }
+
+        return switch (ranInt) {
+            case 1 -> "game1";
+            case 2 -> "game2";
+            case 3 -> "game3";
+            default -> "game";
+        };
     }
 
 }
