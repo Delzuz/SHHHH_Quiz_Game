@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>User page</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{'/style.css'}">
 </head>
-<body>
+<body class="userpage">
 <h1>Java Quiz Game</h1>
 <div>
     <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>

@@ -1,11 +1,20 @@
+body {
+    background-color: darkcyan;
+}
+
 .login {
     background-image: url("/photos/start.jpg");
 }
 
-.login h1 {
+h1 {
     display:flex;
     justify-content: center;
     color: azure;
+}
+
+.pic {
+    display: block;
+    margin: auto;
 }
 
 .login form {
@@ -21,4 +30,10 @@
 
 .login div {
     padding: 5px;
+}
+
+.userpage div {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
