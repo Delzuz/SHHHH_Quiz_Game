@@ -1,0 +1,16 @@
+.login h1 {
+    display:flex;
+    justify-content: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid blue;
+}
+
+.login div {
+    padding: 5px;
+}
