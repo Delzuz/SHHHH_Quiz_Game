@@ -52,7 +52,7 @@ public class ShhhhController {
     }
 
     Random random = new Random();
-    int ranInt = random.nextInt(1,4);
+    int ranInt = random.nextInt(0,5);
     @GetMapping("/game")
     public String startGame (Model model, HttpSession session) {
         QuestionRepository queRepository = new QuestionRepository();
