@@ -29,6 +29,6 @@ class ShhhhQuizGameApplicationTests {
 	@Test
 	void springSecUser (){
 		User user = new User("test","test");
-		secCon.userDetailsService("test", "user.getPassword()");
+		secCon.addUser(user.getUsername(),user.getPassword());
 	}
 }
