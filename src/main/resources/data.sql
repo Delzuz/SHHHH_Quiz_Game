@@ -2,6 +2,18 @@ INSERT INTO USERS (USER_NAME, PASS_WORD) values('user','123');
 INSERT INTO USERS (USER_NAME, PASS_WORD) values('user2','123');
 
 
-insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Fråga 1', 'Svar1','Svar2','Svar3','Rätt');
-insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Fråga 2', 'Svsadsa','Sva3132r2','Svsdaar3','Rätt1');
-insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Fråga 3', 'Svsadsa','Sva3132r2','Svsdaar3','Rätt1');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Number of primitive data types in Java are?','6','4','9','8');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('To which of the following does the class string belong to','java.awt','java.applet', 'java.string', 'java.lang');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of the following statements are true about finalize() method?','It can be called zero or more times','It can be called once','It can be called one or more times','It can be called zero or one time');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Select Odd one out from these about local variables','Local variables are declared in me thods, constructors, or blocks','Local variables are created when the method, constructor or block is entered','The variable will be destroyed once it exits the method, constructor, or block','We can\'t create reference variables of Local variables');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('How many threads can be executed at a time?","Only one thread','Only main (main() method) thread','Two threads','Multiple threads');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of the following is a mutable class in java?', 'java.lang.String', 'java.lang.Byte','java.lang.Short','java.lang.StringBuilder');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which keyword is used for accessing the features of a package?','package','export','extend','import');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of the following is a reserved keyword in Java?','Object','Main','System','strictfp');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which option is false about the final keyword?','A final method cannot be overridden in its subclasses','A final class cannot be extended','A final method can be inherited','Final class cannot extend other classes');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of the following is true about the anonymous inner class?','It has only methods','Objects can\'t be created','It has a fixed class name','It has no class name');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which method of the Class.class is used to determine the name of a class represented by the class object as a String?','getClass()','intern()','toString()','getName');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('When an array is passed to a method, what does the method receive?','A copy of the array','Length of an array','Copy of the first element','The reference of the array');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Identify the corrected definition of a package', 'A package is a collection of editing tools','A package is a collection of classes', 'A package is a collection of interfaces','A package is a collection of classes and interfaces');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('What does the expression float a = 35/0 return?','0','Not a number','Run time exception','Infinity');
+insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('What is the return type of the hashCode() method in the Object class?','Object','Long','void','int');
