@@ -74,15 +74,19 @@ public class ShhhhController {
         return "login";
     }
 
-    Random random = new Random();
+
     //Detta måste bytas till session
-    int ranInt = random.nextInt(0,5);
+
     @GetMapping("/game")
     public String startGame (Model model, HttpSession session) {
         //QuestionRepository queRepository = new QuestionRepository();
-        Question question = qRepository.findById(1L).get();
+        Random random = new Random();
+        Long nextQuestion = random.nextLong(1,4);
+        int ranInt = random.nextInt(0,5);
+        Question question = qRepository.findById(nextQuestion).get();
         session.setAttribute("question", question);
         ranInt = random.nextInt(0,5);
+        session.setAttribute("ranInt",ranInt);
         //model.addAttribute("randomInt",ranInt);
         return switch (ranInt) {
             case 1 -> "game1";
@@ -90,6 +94,7 @@ public class ShhhhController {
             case 3 -> "game3";
             default -> "game";
         };
+
 
 
 
@@ -108,7 +113,7 @@ public class ShhhhController {
             model.addAttribute("correctAnswer", true);
         }
 
-        return switch (ranInt) {
+        return switch ((int)session.getAttribute("ranInt")) {
             case 1 -> "game1";
             case 2 -> "game2";
             case 3 -> "game3";
