@@ -1,5 +1,4 @@
 INSERT INTO USERS (USER_NAME, PASS_WORD) values('user','123');
-INSERT INTO USERS (USER_NAME, PASS_WORD) values('user2','123');
 
 insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of these classes are the direct subclasses of the Throwable class?', 'RuntimeException and Error class','Exception and VirtualMachineError class','IOException and VirtualMachineError class','Error and Exception class');
 insert into Questions (QUIZ_QUESTION, ANSWERW1, ANSWERW2, ANSWERW3, ANSWERC) values ('Which of the following interface is used to declare core methods in Java?', 'Set','EventListener','Comparison','Collection');
