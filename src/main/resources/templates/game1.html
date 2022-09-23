@@ -5,14 +5,13 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="../static/style.css" th:href="@{'/style.css'}">
 </head>
-<body>
+<body class="game">
 <h1>Java Quiz</h1>
 <img th:src="@{/photos/img1.jpg}" width="400" class="pic"/>
 
-<p>Each question has 4 options.</p>
 
-<table>
-    <tr th:text="'Question ' + ${session.question.quiz}">
+<table class="game2">
+    <tr th:text="${session.question.quiz}">
         QUESTION
     </tr>
     <form th:action="@{/game}" method="post">
@@ -44,13 +43,13 @@
                 Incorrect Answer
             </p>
 
-            <p>
-                <a href="/userpage"><input type="button" value="End game"/></a>
-                <a href="/game"><input type="button" value="Next"/></a>
-            </p>
+
         </td>
     </tr>
 </table>
-
+<p>
+    <a href="/userpage"><input type="button" value="End game"/></a><br>
+    <a href="/game"><input type="button" value="Next"/></a>
+</p>
 </body>
 </html>

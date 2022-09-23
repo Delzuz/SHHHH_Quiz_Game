@@ -82,7 +82,7 @@ public class ShhhhController {
     public String startGame (Model model, HttpSession session) {
         //QuestionRepository queRepository = new QuestionRepository();
         Random random = new Random();
-        Long nextQuestion = random.nextLong(1,4);
+        Long nextQuestion = random.nextLong(1,31);
         int ranInt = random.nextInt(0,5);
         Question question = qRepository.findById(nextQuestion).get();
         session.setAttribute("question", question);
