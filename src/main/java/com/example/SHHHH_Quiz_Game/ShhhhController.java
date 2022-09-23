@@ -1,5 +1,7 @@
 package com.example.SHHHH_Quiz_Game;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,14 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
+import java.util.List;
 import java.util.Random;
 
 @Controller
 public class ShhhhController {
+    Logger logger = LoggerFactory.getLogger(ShhhhController.class);
+    @Autowired
+    userRepositoryDatabase userRepository;
 
     @Autowired
-    UserRepository repository;
-    QuestionRepository qRepository;
+    QuestionsRepositoryDatabase qRepository;
+
 
     @GetMapping("/")
     public String start(){
@@ -25,25 +31,42 @@ public class ShhhhController {
     public String signupGet (Model model) {
         User user = new User(null,null);
         model.addAttribute("user" , user);
-        System.out.println(repository.printList().size());
+        //System.out.println(repository.printList().size());
 
         return "create";
     }
-    @PostMapping("/signup")
+    @PostMapping("/save")
     public String signup (@ModelAttribute User user) {
-        System.out.println(user.getUsername());
-        repository.addUser(user);
-        System.out.println(repository.printList().size());
+        //User newUser = new User(user.getUsername(),user.getPassword());
+        userRepository.save(user);
+        SecurityConfig.addUser(user.getUsername(),user.getPassword());
+        //repository.addUser(user);
+        //System.out.println(repository.printList().size());
         return "create";
     }
 
 
     @GetMapping("/userpage")
-    public String userpage() { return "userpage"; }
+    public String userpage(HttpSession session) {
+        session.getAttribute("user");
+        return "userpage";
+    }
 
     @GetMapping("/login")
-    public String login() {
+    public String loginGet (){
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(HttpSession session, @RequestParam String username, @RequestParam String password) {
+        logger.info(username);
+        List<User> users = userRepository.findByUsername(username);
+        if (users.size() > 0 && users.get(0).getPassword().equals(password)) {
+            session.setAttribute("user", users.get(0));
+
+            return "redirect:/userpage";
+        }
+        return "redirect:/";
     }
 
     @GetMapping("/logout")
@@ -52,11 +75,12 @@ public class ShhhhController {
     }
 
     Random random = new Random();
+    //Detta måste bytas till session
     int ranInt = random.nextInt(0,5);
     @GetMapping("/game")
     public String startGame (Model model, HttpSession session) {
-        QuestionRepository queRepository = new QuestionRepository();
-        Question question = queRepository.getRandomQuestion();
+        //QuestionRepository queRepository = new QuestionRepository();
+        Question question = qRepository.findById(1L).get();
         session.setAttribute("question", question);
         ranInt = random.nextInt(0,5);
         //model.addAttribute("randomInt",ranInt);

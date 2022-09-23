@@ -8,7 +8,7 @@ public class QuestionRepository {
 
     public QuestionRepository() {
         questions = new ArrayList<>();
-
+/*
         questions.add(new Question(1,"Which of these classes are the direct subclasses of the Throwable class?","RuntimeException and Error class","Exception and VirtualMachineError class","IOException and VirtualMachineError class","Error and Exception clas"));
         questions.add(new Question(2, "Which of the following interface is used to declare core methods in Java?","Set","EventListner","Comparison","Collection"));
         questions.add(new Question(3,"Which of these interface handle sequences?","Set","Comparator","Collector","List"));
@@ -40,6 +40,8 @@ public class QuestionRepository {
         questions.add(new Question(29,"To which of the following does the class string belong to","java.awt","java.applet", "java.string", "java.lang"));
         questions.add(new Question(30,"Number of primitive data types in Java are?","6","4","9","8"));
 
+
+ */
     }
 
     public Question getQuestion(int id) {

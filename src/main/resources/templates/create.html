@@ -9,7 +9,7 @@
 <h1>Java quiz game</h1>
 <h2>Signup</h2>
 
-<form th:action="@{/signup}" method="POST" th:object="${user}">
+<form th:action="@{/save}" method="POST" th:object="${user}">
     Username: <input type="text" th:field="*{username}"/>
     Password: <input type="password" th:field="*{password}"/>
     <input type="submit"/>
