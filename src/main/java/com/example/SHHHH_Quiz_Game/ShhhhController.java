@@ -41,8 +41,9 @@ public class ShhhhController {
         userRepository.save(user);
         SecurityConfig.addUser(user.getUsername(),user.getPassword());
         //repository.addUser(user);
+
         //System.out.println(repository.printList().size());
-        return "create";
+        return "redirect:/";
     }
 
 
